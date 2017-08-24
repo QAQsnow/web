@@ -1,0 +1,14 @@
+正课:
+1. 页面滚动:
+  事件: window.onscroll
+  属性: 页面滚动的距离
+    var scrollTop=
+      document.body.scrollTop
+      ||
+      document.documentElement.scrollTop
+  方法:
+    window.scrollTo(left,top);滚动到
+    window.scrollBy(left,top);滚动了
+2. 获得任意元素距页面顶部的总距离:
+   elem.offsetTop 返回距离相对定位的父元素的top值，不带px
+   elem.offsetParent 返回相对定位的父元素

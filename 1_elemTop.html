@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> 我的第一个网页 </title>
+  <meta charset="utf-8"/>
+  <style>
+    *{padding:0;margin:0}
+    div{position:absolute}
+    #d1{width:500px; height:500px;
+      top:50px; background-color:red
+    }
+    #d2{width:400px; height:400px;
+      top:40px; background-color:yellow
+    }
+    #d3{width:300px; height:300px;
+      top:30px; background-color:green
+    }
+  </style>
+ </head>
+
+ <body>
+  <div id="d1">
+    <div id="d2">
+      <div id="d3">
+      </div>
+    </div>
+  </div>
+  <script>
+//求任意elem距页面顶部的总距离
+function getElemTop(elem){
+  //声明一个sum,初始化为elem.offsetTop
+  var sum=elem.offsetTop;
+  //循环:elem.offsetParent!=null
+  while(elem.offsetParent!=null){
+    //获得elem.offsetParent.offsetTop，累加s到sum上
+    sum+=elem.offsetParent.offsetTop;
+    //将elem替换为其offsetParent
+    elem=elem.offsetParent;
+  }//(循环结束)
+  return sum
+}
+console.log(getElemTop(d3));//120
+console.log(getElemTop(d2));//90
+console.log(getElemTop(d1));//50
+  </script>
+ </body>
+</html>
